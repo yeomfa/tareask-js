@@ -19,7 +19,7 @@
   --dark-focus: #dddddd;
 
   --light-gradient: linear-gradient(90deg, rgba(200,200,200,1) 0%, rgba(224,224,224,1) 35%, rgba(242,242,242,1) 100%);
-  --dark-gradient: linear-gradient(90deg, rgba(20,20,20,1) 0%, rgba(30,30,30,1) 35%, rgba(0,0,0,1) 100%);
+  --dark-gradient: linear-gradient(123deg, rgba(20,20,20,1) 0%, rgba(30,30,30,1) 44%, rgba(0,0,0,1) 100%);
 }
 
 /* All */
@@ -96,7 +96,7 @@
 
 .form-add-task .input-task-content {
   height: 40px;
-  width: 420px;
+  width: 500px;
   border-radius: 7px 0 0 7px;
   border: none;
   font-size: 18px;
@@ -125,9 +125,9 @@
 
 /* Todo list */
 .todo-list {
-  min-height: 150px;
+  min-height: 100px;
   max-height: 400px;
-  width: 500px;
+  width: 580px;
   background-color: var(--light-container);
   margin-top: 20px;
   border-radius: 10px;
@@ -135,15 +135,27 @@
   overflow: hidden;
 }
 
-.todo {
+.message {
   font-size: 20px;
-  height: 40px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--line-through);
+}
+
+.todo {
   border-bottom: 1px solid var(--light-border);
   color: var(--light-text);
   padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.todo-content {
+  font-size: 18px;
+  width: 470px;
 }
 
 .success {
@@ -176,4 +188,109 @@
 
 .options .btn-delete:focus {
   outline: 3px solid var(--primary-color);
+}
+
+/* Responsive */ 
+@media only screen and (max-width: 600px) {
+
+  /* Navbar */
+  .navbar ul {
+    height: 40px;
+    padding: 20px 20px 0 0;
+  }
+
+  .navbar ul li {
+    font-size: 25px;
+    padding: 10px;
+  }
+
+  /* Icon */
+  .icon {
+    margin-top: 20px;
+  }
+
+  .icon .title {
+    font-size: 30px;
+  }
+
+  .icon i {
+    font-size: 30px;
+  }
+
+  /* Add task */
+  .form-add-task {
+    margin-top: 20px;
+  }
+
+  .form-add-task .input-task-content {
+    height: 40px;
+    width: 250px;
+    font-size: 15px;
+    padding-left: 10px;
+  }
+
+  .form-add-task .btn-add-task {
+    height: 40px; 
+    width: 70px;
+    font-size: 15px;
+  }
+
+  /* Todo list */
+  .todo-list {
+    min-height: 80px;
+    max-height: 400px;
+    width: 325px;
+  }
+
+  .message {
+    font-size: 16px;
+  }
+
+  .todo {
+    height: 40px;
+    border-bottom: 1px solid var(--light-border);
+    color: var(--light-text);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .todo-content {
+    font-size: 15px;
+    width: 200px;
+  }
+
+  .success {
+    text-decoration: line-through;
+    color: var(--line-through);
+  }
+
+  .options button {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: none;
+    color: var(--light-container);
+    font-size: 20px;
+    margin-left: 5px;
+  }
+
+  .options .btn-success {
+    background-color: var(--primary-color);
+  }
+
+  .options .btn-success:focus {
+    outline: 3px solid var(--primary-color);
+  }
+
+  .options .btn-delete {
+    background-color: var(--light-focus);
+  }
+
+  .options .btn-delete:focus {
+    outline: 3px solid var(--primary-color);
+  }
+
 }
