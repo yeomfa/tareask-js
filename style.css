@@ -66,7 +66,7 @@
 
 /* Text and logo */
 .icon {
-  margin-top: 100px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -161,6 +161,13 @@
 .success {
   text-decoration: line-through;
   color: var(--line-through);
+}
+
+.options {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: cente;
+  width: 80px;
 }
 
 .options button {

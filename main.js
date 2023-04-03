@@ -14,7 +14,7 @@ const toggleTheme = document.querySelector('.theme-toggle');
 const btnGithub = document.querySelector('a');
 
 // Variables
-let tasks = JSON.parse(localStorage.getItem('tasks')) || [{content: 'Terminar de aprender JavaScript 🤖', success: false}, {content: 'Terminar de aprender rust 🦀', success: false}, {content: 'Avanzar en DevOps 🌀', success: false}];
+let tasks = JSON.parse(localStorage.getItem('tasks')) || [{content: 'Improve programming habits 🤖', success: false}, {content: 'Enjoy every day of life 🦀', success: false}, {content: 'To be a better person 🌀', success: false}];
 let isDark = JSON.parse(localStorage.getItem('theme'));
 console.log(isDark);
 const emojis = ["🐙", "📱", "🐺", "🦋", "🕷", "🐢", "🐴", "🦄", "🤖", "🐵", "🦉", "🐛", "🦞", "🦀", "🐮", "🐧", "🐸", "🦕", "🐯", "🐠", "🐍", "🦑", "🐝", "🦈", "🐳", "🦐", "🦂", "🌀", "🐭", "🐞", "🐻", "🐊", "🐷", "🦅", "🦎", "🐋", "🐙", "🐘", "🦇", "🦟", "🐠", "🐬", "🐢", "🐺", "🐨", "📷", "🐡", "🐦", "🎧", "🦔", "🐌", "🎓", "🚀", "🐜", "🦃", "🐔", "🦜", "🦔", "🏫", "🐼", "🕸️", "🦌", "🐑", "🐣", "📚", "🦕", "🕹️", "🦈"];
@@ -93,10 +93,11 @@ const addTask = taskContent => {
   if (taskContent.length > 1) {
     const random = Math.floor(Math.random() * emojis.length);
     tasks.push({content: `${taskContent} ${emojis[random]}`, success: false});
+    saveTasks(tasks);
     chargeTasks(tasks);
+    checkHeight();
     inputTask.value = '';
   }
-  checkHeight();
   changeTheme(isDark);
 }
 
@@ -105,6 +106,7 @@ const removeTask = taskPos => {
   tasks = tasks.filter(task => task.content != taskToRemove); 
   saveTasks(tasks);
   chargeTasks(tasks);
+  checkHeight();
   changeTheme(isDark);
 }
 
@@ -118,6 +120,8 @@ const successTask = (taskPosCollection, taskPosArr) => {
 const checkHeight = () => {
   if (todoList.clientHeight >= 400) {
     todoList.style.overflowY = 'scroll';
+  } else {
+    todoList.style.overflowY = 'hidden';
   }
 }
 
