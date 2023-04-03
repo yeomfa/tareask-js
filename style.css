@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Variables */
+:root {
+  --primary-color: #2979ff;
+  --delete-color: #303030;
+  --line-through: #909090;
+
+  /* Light */
+  --light-container: #fdfdfd;
+  --light-text: #202020;
+  --light-border: #dddddd;
+  --light-focus: #505050;
+
+  /* Dark */
+  --dark-container: #303030;
+  --dark-text: #dddddd;
+  --dark-border: #505050;
+  --dark-focus: #dddddd;
+
+  --light-gradient: linear-gradient(90deg, rgba(200,200,200,1) 0%, rgba(224,224,224,1) 35%, rgba(242,242,242,1) 100%);
+  --dark-gradient: linear-gradient(90deg, rgba(20,20,20,1) 0%, rgba(30,30,30,1) 35%, rgba(0,0,0,1) 100%);
+}
+
+/* All */
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Container app */
+.app {
+  background: var(--light-gradient);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+}
+
+.navbar ul {
+  height: 60px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  padding: 20px 30px 0 0;
+}
+
+.navbar ul li {
+  cursor: pointer;
+  font-size: 30px;
+  padding: 20px;
+  color: var(--light-focus);
+}
+
+.navbar ul li a {
+  color: var(--light-focus);
+}
+
+/* Text and logo */
+.icon {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon .title {
+  color: var(--light-focus);
+  font-size: 40px;
+  padding-left: 10px;
+}
+
+.icon i {
+  border-radius: 50%;
+  background-color: var(--light-container);
+  font-size: 40px;
+  color: var(--primary-color);
+}
+
+/* Add task */
+.form-add-task {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  box-shadow: 0 0 15px -10px var(--light-text);
+}
+
+.form-add-task .input-task-content {
+  height: 40px;
+  width: 420px;
+  border-radius: 7px 0 0 7px;
+  border: none;
+  font-size: 18px;
+  padding-left: 10px;
+}
+
+.form-add-task .input-task-content:focus {
+  outline: 3px solid var(--primary-color);
+}
+
+.form-add-task .btn-add-task {
+  cursor: pointer;
+  border-radius: 0 7px 7px 0;
+  height: 40px; 
+  width: 70px;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--light-container);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.form-add-task .btn-add-task:focus {
+  outline: 3px solid var(--light-container);
+}
+
+/* Todo list */
+.todo-list {
+  min-height: 150px;
+  max-height: 400px;
+  width: 500px;
+  background-color: var(--light-container);
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px -10px var(--light-text);
+  overflow: hidden;
+}
+
+.todo {
+  font-size: 20px;
+  height: 40px;
+  border-bottom: 1px solid var(--light-border);
+  color: var(--light-text);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.success {
+  text-decoration: line-through;
+  color: var(--line-through);
+}
+
+.options button {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: none;
+  color: var(--light-container);
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+.options .btn-success {
+  background-color: var(--primary-color);
+}
+
+.options .btn-success:focus {
+  outline: 3px solid var(--primary-color);
+}
+
+.options .btn-delete {
+  background-color: var(--light-focus);
+}
+
+.options .btn-delete:focus {
+  outline: 3px solid var(--primary-color);
+}

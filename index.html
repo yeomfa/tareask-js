@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tareask</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  </head>
+  <body>
+    <div class="app">
+      <nav class="navbar">
+        <ul>
+          <li class="theme-toggle"><i class='bx bxs-moon'></i></li> 
+          <li>
+            <a target="_blank" class="github-rep" href="https://github.com/yeomfa/tareask-js">
+              <i class='bx bxl-github'></i>
+            </a>
+          </li> 
+        </ul>
+      </nav>
+      <!-- icon -->
+      <div class="icon">
+        <i class='bx bxs-bolt-circle'></i>
+        <h1 class="title">Tareask</h1>
+      </div>
+      <!-- input task -->
+      <form class="form-add-task">
+        <input maxlength="40" class="input input-task-content" placeholder="Task content here... (40)"/>
+        <button class="btn-add-task">Add</button>
+      </form>
+      <!-- todo-list -->
+      <div class="todo-list">
+        <div class="todo">
+          <p class="todo-content">Finish Tareask's app</p>
+          <div class="options">
+            <button class="btn-success"><i class='bx bx-check' ></i></button>
+            <button class="btn-delete"><i class='bx bx-x' ></i></button>
+          </div>
+        </div> 
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
